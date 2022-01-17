@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+*.sqlite3
+
+# Some info about my bot
+bot_parser/info.py
+
+
