@@ -1,0 +1,2 @@
+def ugc():
+    return None

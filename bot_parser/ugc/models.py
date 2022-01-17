@@ -5,7 +5,8 @@ from django.db import models
 
 class Profile(models.Model):
     external_id = models.PositiveIntegerField(
-        verbose_name='Id пользователя',
+        verbose_name='Внешний Id пользователя',
+        unique=True,
     )
     name = models.TextField(
         verbose_name='Имя пользователя',
