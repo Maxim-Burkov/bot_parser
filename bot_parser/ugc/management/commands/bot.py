@@ -27,7 +27,7 @@ def log_errors(f):
 def start(update: Update, context: CallbackContext):
     chat_id = update.message.chat_id
     text = update.message.text
-    reply_text = f'Ваш id: {chat_id}'
+    reply_text = f'Ваш ib; {chat_id}'
 
     p, _ = Profile.objects.get_or_create(
         external_id=chat_id,
@@ -56,16 +56,3 @@ class Command(BaseCommand):
             token=settings.TOKEN,
         )
         print(bot.get_me())
-
-        # 2----Обработчики
-        updater = Updater(
-            bot=bot,
-            use_context=True,
-        )
-
-        message_handler = MessageHandler(Filters.text, start)
-        updater.dispatcher.add_handler(message_handler)
-
-        # 3----Запуск бесконечной обработки входящих сообщений
-        updater.start_polling()
-        updater.idle()
