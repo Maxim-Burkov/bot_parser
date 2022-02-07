@@ -1,1 +1,1 @@
-# bot_parser
+Админка django
